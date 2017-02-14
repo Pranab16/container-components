@@ -1,0 +1,100 @@
+{
+  "name": "container-components",
+  "version": "0.0.1",
+  "description": "Repository of GetSatisfaction Community Components.",
+  "main": "src/index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 9003 -c .storybook ",
+    "lint": "eslint src/**",
+    "lint:css": "stylelint '**/*.scss'",
+    "lint:js": "eslint . --fix",
+    "test": "jest --verbose",
+    "test:watch": "npm test -- --watch"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/enzyme"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    },
+    "coverageDirectory": "<rootDir>/coverage",
+    "collectCoverage": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Pranab16/container-components.git"
+  },
+  "git-pre-hooks": {
+    "pre-commit": "npm run lint",
+    "post-commit": "git status",
+    "pre-push": [
+      "npm run test"
+    ],
+    "post-checkout": [
+      "npm install",
+      "npm test"
+    ],
+    "post-merge": [
+      "npm install",
+      "npm run test"
+    ]
+  },
+  "author": "Sprinklr",
+  "license": "ISC",
+  "homepage": "https://github.com/Pranab16/container-components",
+  "devDependencies": {
+    "@kadira/storybook": "2.34.0",
+    "babel": "6.5.2",
+    "babel-eslint": "7.1.1",
+    "babel-jest": "18.0.0",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.18.0",
+    "css-loader": "0.26.1",
+    "enzyme": "2.7.1",
+    "eslint": "3.12.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-react": "6.9.0",
+    "eslint-plugin-sort-class-members": "1.1.1",
+    "faker": "3.1.0",
+    "file-loader": "0.10.0",
+    "git-pre-hooks": "1.2.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "18.1.0",
+    "joi-browser": "10.0.6",
+    "node-sass": "4.0.0",
+    "polyfill": "0.1.0",
+    "postcss-loader": "1.2.1",
+    "postcss-scss": "0.4.0",
+    "raw-loader": "0.5.1",
+    "react-addons-test-utils": "15.4.2",
+    "react-storybook-addon-backgrounds": "0.0.7",
+    "sass-loader": "5.0.1",
+    "spr-svg-loader": "0.2.4",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7"
+  },
+  "dependencies": {
+    "bem-classnames": "1.0.7",
+    "classnames": "2.2.5",
+    "lodash": "4.17.3",
+    "react": "15.4.1",
+    "react-dom": "15.4.1",
+    "react-list": "0.8.3",
+    "rosie": "1.6.0",
+    "uuid": "3.0.1"
+  }
+}
