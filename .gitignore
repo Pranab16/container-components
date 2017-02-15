@@ -7,7 +7,7 @@ dist
 
 # IDEs
 .idea
-.iml
+*.iml
 
 # OS Files
 .DS_Store
