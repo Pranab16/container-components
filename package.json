@@ -7,51 +7,11 @@
     "storybook": "start-storybook -p 9003 -c .storybook ",
     "lint": "eslint src/**",
     "lint:css": "stylelint '**/*.scss'",
-    "lint:js": "eslint . --fix",
-    "test": "jest --verbose",
-    "test:watch": "npm test -- --watch"
-  },
-  "jest": {
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-dom",
-      "<rootDir>/node_modules/enzyme"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|scss)$": "identity-obj-proxy"
-    },
-    "transform": {
-      ".*": "<rootDir>/node_modules/babel-jest"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 0,
-        "functions": 0,
-        "lines": 0,
-        "statements": 0
-      }
-    },
-    "coverageDirectory": "<rootDir>/coverage",
-    "collectCoverage": true
+    "lint:js": "eslint . --fix"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:Pranab16/container-components.git"
-  },
-  "git-pre-hooks": {
-    "pre-commit": "npm run lint",
-    "post-commit": "git status",
-    "pre-push": [
-      "npm run test"
-    ],
-    "post-checkout": [
-      "npm install",
-      "npm test"
-    ],
-    "post-merge": [
-      "npm install",
-      "npm run test"
-    ]
   },
   "author": "Sprinklr",
   "license": "ISC",
@@ -85,16 +45,22 @@
     "sass-loader": "5.0.1",
     "spr-svg-loader": "0.2.4",
     "style-loader": "0.13.1",
-    "url-loader": "0.5.7"
+    "url-loader": "0.5.7",
+    "webpack": "^2.2.1"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "bem-classnames": "1.0.7",
     "classnames": "2.2.5",
+    "immutability-helper": "^2.1.1",
     "lodash": "4.17.3",
     "react": "15.4.1",
     "react-dom": "15.4.1",
     "react-list": "0.8.3",
-    "rosie": "1.6.0",
+    "react-router": "^4.0.0-beta.6",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.1",
+    "spr-web-components": "^0.1.54",
     "uuid": "3.0.1"
   }
 }
