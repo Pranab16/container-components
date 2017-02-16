@@ -1,0 +1,13 @@
+$spx-link--color: #40a3f5 !default;
+$spx-link--cursor: pointer !default;
+$spx-link--font-family: Helvetica, Arial, sans-serif !default;
+$spx-link--font-size: 1rem !default;
+$spx-link--text-decoration: none !default;
+
+.spx-link {
+  color: $spx-link--color;
+  cursor: $spx-link--cursor;
+  font-family: $spx-link--font-family;
+  font-size: $spx-link--font-size;
+  text-decoration: $spx-link--text-decoration;
+}

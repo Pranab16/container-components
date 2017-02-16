@@ -1,0 +1,44 @@
+.getsat-conversation-list-item {
+  border-bottom: 1px solid #ccc;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  display: inline-block;
+  width: 100%;
+}
+.getsat-conversation-list-item:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.getsat-conversation-list-item__icon {
+  float: left;
+  margin: 0 2%;
+  width: 1.5rem;
+  padding-top: 1rem;
+}
+
+.getsat-icon {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.getsat-conversation-list-item__title {
+  float: left;
+  width: 75%;
+  padding-top: 1rem;
+}
+
+.getsat-conversation-list-item__title .spx-link {
+  font-size: 1.4rem;
+}
+
+.getsat-conversation-list-item__completed {
+  background: transparent url(../../img/conversation-answered.png) no-repeat right top;
+  float: right;
+  height: 2.7rem;
+  width: 2.7rem;
+}

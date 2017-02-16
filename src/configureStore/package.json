@@ -1,0 +1,5 @@
+{
+  "name": "Site redux store",
+  "private": true,
+  "main": "./configureStore"
+}

@@ -1,10 +1,24 @@
 const path = require('path');
 
+const sassLoader = {
+  includePaths: [
+    path.resolve(__dirname, '../node_modules/spr-web-components/')
+  ]
+};
+
+const sassPaths = sassLoader
+  .includePaths
+  .map((sassPath)=>`includePaths[]=${sassPath}`)
+  .join('&');
+
 module.exports = [
   {
     test: /\.js$/,
     loader: 'babel',
-    include: [path.resolve(__dirname, '../src')],
+    include: [
+      path.resolve(__dirname, '../src'),
+      path.resolve(__dirname, '../node_modules/spr-web-components/src')
+    ],
     exclude: [/joi-browser/],
     query: { cacheDirectory: true },
   },
@@ -20,9 +34,12 @@ module.exports = [
     loaders: [
       'style?sourceMap',
       'css?sourceMap',
-      'sass?sourceMap',
+      `sass?sourceMap&${sassPaths}`
     ],
-    include: [path.resolve(__dirname, '../src')],
+    include: [
+      path.resolve(__dirname, '../src'),
+      path.resolve(__dirname, '../node_modules/spr-web-components/src')
+    ]
   },
   {
     test: /\.(png|jpg|jpeg|gif|woff|woff2|otf)$/,
@@ -33,7 +50,7 @@ module.exports = [
     },
   },
   {
-    test: /.svg$/,
+    test: /\.svg$/,
     loader: 'spr-svg-loader!raw-loader',
   }
 ];
