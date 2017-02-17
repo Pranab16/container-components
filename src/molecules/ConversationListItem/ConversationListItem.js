@@ -13,7 +13,7 @@ require('../../img/getsat-update.svg');
 require('../../img/getsat-article.svg');
 
 const ConversationListItem = (props) => (
-  <div className={classnames("getsat-conversation-list-item", props.className)}>
+  <div className={classnames("getsat-conversation-list-item", props.className)} style={props.style}>
     <div className="getsat-conversation-list-item__icon">
       <svg role="icon" className={`getsat-icon getsat-conversation-list-item__icon--${props.topicType}`}>
         <use xlinkHref={`#icon-getsat-${props.topicType}`}/>

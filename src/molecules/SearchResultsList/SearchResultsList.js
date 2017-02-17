@@ -21,7 +21,7 @@ class SearchResultsList extends React.Component {
         this.forceUpdate()
     );
 
-    this.store.dispatch(searchConversations(this.props.communityId, this.props.query));
+    this.store.dispatch(searchConversations(this.props.communityId, this.props.filters));
   }
 
   componentWillUnmount() {
@@ -41,13 +41,13 @@ class SearchResultsList extends React.Component {
   }
 
   handlePageChange(page) {
-    this.store.dispatch(searchConversations(this.props.communityId, this.props.query, page));
+    this.store.dispatch(searchConversations(this.props.communityId, {...this.props.filters, page}));
   }
 }
 
 SearchResultsList.propTypes = {
   communityId: PropTypes.number.isRequired,
-  query: PropTypes.string.isRequired
+  filters: PropTypes.object.isRequired
 };
 
 module.exports = SearchResultsList;

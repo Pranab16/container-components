@@ -27,14 +27,18 @@ const parseConversations = (conversations) => {
   })
 };
 
-module.exports.searchConversations = (communityId, query, page = 1) => {
+const queryString = (filters) => {
+  return Object.keys(filters).map(key => `${key}=${encodeURIComponent(filters[key])}`).join('&')
+};
+
+module.exports.searchConversations = (communityId, filters) => {
   return {
     types: {
       request: LIST_REQUEST,
       success: LIST_SUCCESS,
       failure: LIST_FAILURE
     },
-    promise: http().get('/communities/'+communityId +'/topics/intercept_search?query='+query+'&per=10&page='+page)
+    promise: http().get(`/communities/${communityId}/topics/intercept_search?${queryString(filters)}`)
       .then(response => {
         const { topics, pagination } = response.data;
         return {
