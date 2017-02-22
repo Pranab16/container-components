@@ -12,6 +12,8 @@ class SearchResultsList extends React.Component {
     super(props);
 
     this.store = configureStore(reducer);
+    const { query={} } = this.context.location;
+    this.filters = {...this.props.filters, ...query};
 
     this.handlePageChange = this.handlePageChange.bind(this);
   }
@@ -21,7 +23,8 @@ class SearchResultsList extends React.Component {
         this.forceUpdate()
     );
 
-    this.store.dispatch(searchConversations(this.props.communityId, this.props.filters));
+
+    this.store.dispatch(searchConversations(this.props.communityId, this.filters));
   }
 
   componentWillUnmount() {
@@ -41,13 +44,18 @@ class SearchResultsList extends React.Component {
   }
 
   handlePageChange(page) {
-    this.store.dispatch(searchConversations(this.props.communityId, {...this.props.filters, page}));
+    this.store.dispatch(searchConversations(this.props.communityId, {...this.filters, page}));
   }
 }
 
 SearchResultsList.propTypes = {
   communityId: PropTypes.number.isRequired,
   filters: PropTypes.object.isRequired
+};
+
+SearchResultsList.contextTypes = {
+  location: PropTypes.object,
+  params: PropTypes.object
 };
 
 module.exports = SearchResultsList;

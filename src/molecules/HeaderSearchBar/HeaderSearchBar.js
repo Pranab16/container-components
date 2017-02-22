@@ -15,6 +15,16 @@ class HeaderSearchBar extends React.Component {
     this.state = {
       searchInput: props.value
     };
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  saveSearchTerm(value) {
+    this.setState({searchInput: value});
+  };
+
+  onSubmit() {
+    this.props.onSubmit(this.state.searchInput);
   }
 
   render() {
@@ -35,12 +45,6 @@ class HeaderSearchBar extends React.Component {
       </div>
     )
   }
-
-  saveSearchTerm = (value) => {
-    this.setState({searchInput: value});
-  };
-
-  onSubmit = () => this.props.onSubmit(this.state.searchInput);
 }
 
 

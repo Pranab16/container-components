@@ -6,9 +6,9 @@ const Button = require('../../atoms/Button');
 
 require('./AskQuestion.scss');
 
-const AskQuestion = (props) => (
-  <div className={classnames("getsat-ask-question", props.className)} style={props.style}>
-    <Button url={`${props.url}${encodeURIComponent(props.query)}`} text={props.text} className="getsat-ask-question__button" />
+const AskQuestion = (props, { location, params }) => (
+  <div className={classnames('getsat-ask-question', props.className)} style={props.style}>
+    <Button url={`${props.url}${encodeURIComponent(location.query)}`} text={props.text} className="getsat-ask-question__button" />
   </div>
 );
 
@@ -19,12 +19,16 @@ AskQuestion.propTypes = {
   ]),
   style: PropTypes.object,
   text: PropTypes.string,
-  url: PropTypes.string.isRequired,
-  query: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired
 };
 
 AskQuestion.defaultProps = {
   text: 'Continue Creating Conversation'
+};
+
+AskQuestion.contextTypes = {
+  location: PropTypes.object,
+  params: PropTypes.object
 };
 
 module.exports = AskQuestion;
