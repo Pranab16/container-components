@@ -2,13 +2,13 @@ const React = require('react');
 const classnames = require('classnames');
 const PropTypes = require('spr-web-components/src/lib/PropTypes');
 
-const Button = require('../../atoms/Button');
+const Button = require('spr-web-components/src/atoms/Button');
 
 require('./AskQuestion.scss');
 
 const AskQuestion = (props, { location, params }) => (
   <div className={classnames('getsat-ask-question', props.className)} style={props.style}>
-    <Button url={`${props.url}${encodeURIComponent(location.query)}`} text={props.text} className="getsat-ask-question__button" />
+    <Button url={`${props.url}${encodeURIComponent(location.query.keyword)}`} text={props.text} className="getsat-ask-question__button" />
   </div>
 );
 

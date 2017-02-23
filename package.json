@@ -51,6 +51,7 @@
     "raw-loader": "^0.5.1",
     "react-storybook-addon-backgrounds": "0.0.7",
     "sass-loader": "^5.0.1",
+    "svg-inline-loader": "0.7.1",
     "spr-svg-loader": "^0.2.4",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7"
@@ -68,7 +69,7 @@
     "redux": "^3.6.0",
     "redux-actions": "^1.2.1",
     "redux-thunk": "2.1.0",
-    "spr-web-components": "^0.1.54",
+    "spr-web-components": "^0.1.62",
     "uuid": "3.0.1",
     "valid-url": "^1.0.9"
   }

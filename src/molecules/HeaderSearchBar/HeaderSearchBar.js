@@ -1,21 +1,20 @@
 const React = require('react');
 const classnames = require('classnames');
 const PropTypes = require('spr-web-components/src/lib/PropTypes');
-
-const TextInput = require('../../atoms/TextInput');
-const Button = require('../../atoms/Button');
+const TextInput = require('spr-web-components/src/atoms/TextInput');
+const Button = require('spr-web-components/src/atoms/Button');
 
 require('./HeaderSearchBar.scss');
 
 class HeaderSearchBar extends React.Component {
-
-  constructor(props) {
+  constructor(props, context) {
     super(props);
 
     this.state = {
-      searchInput: props.value
+      searchInput: context.location && context.location.query.keyword ? context.location.query.keyword : ''
     };
 
+    this.saveSearchTerm = this.saveSearchTerm.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -55,12 +54,16 @@ HeaderSearchBar.propTypes = {
   ]),
   style: PropTypes.object,
   placeholder: PropTypes.string,
-  value: PropTypes.string,
   onSubmit: PropTypes.func
 };
 
 HeaderSearchBar.defaultProps = {
   placeholder: "Create or search a Topic."
+};
+
+HeaderSearchBar.contextTypes = {
+  location: PropTypes.object,
+  params: PropTypes.object
 };
 
 module.exports = HeaderSearchBar;

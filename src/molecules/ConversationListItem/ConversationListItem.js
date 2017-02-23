@@ -2,22 +2,24 @@ const React = require('react');
 const classnames = require('classnames');
 const PropTypes = require('spr-web-components/src/lib/PropTypes');
 
-const Link = require('../../atoms/Link');
+const Link = require('spr-web-components/src/atoms/Link');
+const Icon = require('spr-web-components/src/atoms/Icon');
+
+const icons = {
+  question: require('../../img/getsat-question.svg'),
+  problem: require('../../img/getsat-problem.svg'),
+  idea: require('../../img/getsat-idea.svg'),
+  praise: require('../../img/getsat-praise.svg'),
+  update: require('../../img/getsat-update.svg'),
+  article: require('../../img/getsat-article.svg'),
+};
 
 require('./ConversationListItem.scss');
-require('../../img/getsat-question.svg');
-require('../../img/getsat-problem.svg');
-require('../../img/getsat-idea.svg');
-require('../../img/getsat-praise.svg');
-require('../../img/getsat-update.svg');
-require('../../img/getsat-article.svg');
 
 const ConversationListItem = (props) => (
   <div className={classnames("getsat-conversation-list-item", props.className)} style={props.style}>
     <div className="getsat-conversation-list-item__icon">
-      <svg role="icon" className={`getsat-icon getsat-conversation-list-item__icon--${props.topicType}`}>
-        <use xlinkHref={`#icon-getsat-${props.topicType}`}/>
-      </svg>
+      <Icon icon={icons[props.topicType]} className="getsat-icon" />
     </div>
     <div className="getsat-conversation-list-item__title">
       <Link href={props.topicUrl}

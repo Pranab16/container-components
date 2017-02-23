@@ -1,12 +1,12 @@
 const React = require('react');
-const { Router } = require('react-router');
 const PropTypes = require('spr-web-components/src/lib/PropTypes');
 
 const HeaderSearchBar = require('../HeaderSearchBar');
 
-const HeaderSearchBarContainer = (props) => {
+const HeaderSearchBarContainer = (props, { router }) => {
   const onSubmit = (query) => {
-    Router.transitionTo('/search', {query: query});
+    console.log('transition....');
+    router.push(`/search?keyword=${query}`);
   };
 
   return <HeaderSearchBar onSubmit={onSubmit} {...props} />;
@@ -14,11 +14,14 @@ const HeaderSearchBarContainer = (props) => {
 
 HeaderSearchBarContainer.propTypes = {
   placeholder: PropTypes.string,
-  value: PropTypes.string
 };
 
 HeaderSearchBarContainer.defaultProps = {
-  placeholder: 'Which topics are you interested in?'
+  placeholder: 'Which topics are you interested in?',
+};
+
+HeaderSearchBarContainer.contextTypes = {
+  router: PropTypes.object,
 };
 
 module.exports = HeaderSearchBarContainer;

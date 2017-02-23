@@ -51,6 +51,6 @@ module.exports = [
   },
   {
     test: /\.svg$/,
-    loader: 'spr-svg-loader!raw-loader',
+    loader: 'svg-inline',
   }
 ];

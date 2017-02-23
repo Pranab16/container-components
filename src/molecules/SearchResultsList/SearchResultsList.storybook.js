@@ -73,7 +73,7 @@ storiesOf('SearchResultsList', module)
       filters={{
         types: 'praise.any',
         sort_on: 'reply_count',
-          sort_order: 'DESC',
+        sort_order: 'DESC',
         per: 10,
         page: 1
         }}
