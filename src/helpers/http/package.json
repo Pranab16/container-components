@@ -1,5 +1,0 @@
-{
-  "name": "http",
-  "private": true,
-  "main": "./http.js"
-}

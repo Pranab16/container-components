@@ -1,0 +1,5 @@
+{
+  "name": "Http",
+  "private": true,
+  "main": "./Http.js"
+}

@@ -1,11 +1,13 @@
 const React = require('react');
 const PropTypes = require('spr-web-components/src/lib/PropTypes');
 
-const configureStore = require('../../configureStore');
+const configureStore = require('../../lib/configureStore');
 const { reducer, searchConversations } = require('./reducer');
 
 const List = require('spr-web-components/src/molecules/List');
 const ConversationListItem = require('../ConversationListItem');
+
+require('./SearchResultsList.scss');
 
 class SearchResultsList extends React.Component {
   constructor(props, context) {
@@ -39,6 +41,10 @@ class SearchResultsList extends React.Component {
     this.unsubscribe();
   }
 
+  handlePageChange(page) {
+    this.store.dispatch(searchConversations(this.props.communityId, {...this.filters, page}));
+  }
+
   renderEmptyText(conversations) {
     if(conversations.length === 0) return <span>{this.props.emptyString}</span>
   }
@@ -46,23 +52,25 @@ class SearchResultsList extends React.Component {
   render() {
     const state = Object.assign({}, this.store.getState());
 
-    if(state.loading || state.error) return null;
+    if (state.loading || state.error) return null;
+
+    let { conversations, pagination } = state;
+    if (this.filters.limit) {
+      conversations = conversations.slice(0, this.filters.limit);
+      pagination.itemsCount = this.filters.limit;
+    }
 
     return (
       <div className="getsat-search-results-list">
         <List
           listItemComponent={ConversationListItem}
-          listItems={state.conversations}
-          pagination={{...state.pagination, onChange: this.handlePageChange}}
+          listItems={conversations}
+          pagination={{...pagination, onChange: this.handlePageChange}}
           title={this.props.title}
         />
-        {this.renderEmptyText(state.conversations)}
+        {this.renderEmptyText(conversations)}
       </div>
     );
-  }
-
-  handlePageChange(page) {
-    this.store.dispatch(searchConversations(this.props.communityId, {...this.filters, page}));
   }
 }
 

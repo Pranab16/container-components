@@ -29,7 +29,7 @@ class HeaderSearchBar extends React.Component {
     }
   }
   onSubmit() {
-    this.props.onSubmit(this.state.searchInput);
+    if (this.state.searchInput) this.props.onSubmit(this.state.searchInput);
   }
 
   render() {

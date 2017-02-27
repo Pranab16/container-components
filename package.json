@@ -69,7 +69,7 @@
     "redux": "^3.6.0",
     "redux-actions": "^1.2.1",
     "redux-thunk": "2.1.0",
-    "spr-web-components": "^0.1.62",
+    "spr-web-components": "^0.2.2",
     "uuid": "3.0.1",
     "valid-url": "^1.0.9"
   }

@@ -1,17 +1,36 @@
 const React = require('react');
 const { storiesOf, action } = require('@kadira/storybook');
+const PropTypes = require('spr-web-components/src/lib/PropTypes');
 const SearchResultsList = require('./SearchResultsList');
+
+const SearchResultsListWrapper = React.createClass({
+
+  childContextTypes: {
+    location: PropTypes.object
+  },
+
+  getChildContext () {
+    return {
+      location: this.props.location
+    }
+  },
+
+  render () {
+    return (
+      <SearchResultsList
+        communityId={4}
+        filters={{
+          per: 10,
+          page: 1
+        }}
+      />
+    )
+  }
+});
 
 storiesOf('SearchResultsList', module)
   .add('search for `new` keyword', () => (
-    <SearchResultsList
-      communityId={4}
-      filters={{
-        query: 'new',
-        per: 10,
-        page: 1
-      }}
-    />
+    <SearchResultsListWrapper location={{query: {keyword: 'new'}}} />
   ))
   .add('search for topic type question', () => (
     <SearchResultsList
@@ -20,6 +39,17 @@ storiesOf('SearchResultsList', module)
         types: 'question.any',
         per: 10,
         page: 1
+      }}
+    />
+  ))
+  .add('limit results', () => (
+    <SearchResultsList
+      communityId={4}
+      filters={{
+        types: 'question.any',
+        per: 10,
+        page: 1,
+        limit: 5
       }}
     />
   ))

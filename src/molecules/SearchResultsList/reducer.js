@@ -1,6 +1,5 @@
-const http = require('../../helpers/http');
+const { httpGet } = require('../../lib/Http');
 const { handleActions } = require('redux-actions');
-const { browserHistory } = require('react-router');
 
 const LIST_REQUEST = 'conversations/LIST_REQUEST';
 const LIST_SUCCESS = 'conversations/LIST_SUCCESS';
@@ -27,10 +26,6 @@ const parseConversations = (conversations) => {
   })
 };
 
-const queryString = (filters) => {
-  return Object.keys(filters).map(key => `${key}=${encodeURIComponent(filters[key])}`).join('&')
-};
-
 module.exports.searchConversations = (communityId, filters) => {
   return {
     types: {
@@ -38,7 +33,7 @@ module.exports.searchConversations = (communityId, filters) => {
       success: LIST_SUCCESS,
       failure: LIST_FAILURE
     },
-    promise: http().get(`/communities/${communityId}/topics/intercept_search?${queryString(filters)}`)
+    promise: httpGet(`/communities/${communityId}/topics/intercept_search`, filters)
       .then(response => {
         const { topics, pagination } = response.data;
         return {

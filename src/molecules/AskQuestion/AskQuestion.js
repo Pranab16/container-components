@@ -6,11 +6,15 @@ const Button = require('spr-web-components/src/atoms/Button');
 
 require('./AskQuestion.scss');
 
-const AskQuestion = (props, { location, params }) => (
-  <div className={classnames('getsat-ask-question', props.className)} style={props.style}>
-    <Button url={`${props.url}${encodeURIComponent(location.query.keyword)}`} text={props.text} className="getsat-ask-question__button" />
-  </div>
-);
+const AskQuestion = (props, { location, params }) => {
+  const query = location && location.query.keyword ? location.query.keyword : '';
+
+  return (
+    <div className={classnames('getsat-ask-question', props.className)} style={props.style}>
+      <Button url={`${props.url}${encodeURIComponent(query)}`} text={props.text} className="getsat-ask-question__button" />
+    </div>
+  )
+};
 
 AskQuestion.propTypes = {
   className: PropTypes.oneOfType([

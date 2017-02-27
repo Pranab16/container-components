@@ -1,0 +1,5 @@
+{
+  "main": "./AuthStorage.js",
+  "name": "Auth Storage",
+  "privage": true
+}

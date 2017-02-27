@@ -1,0 +1,69 @@
+@import 'src/style/base';
+
+$signin-header-item-active: $granite !default;
+$signin-header-divider: $soapstone !default;
+$signin-divider: $marble !default;
+$signin-divider-line: $chrome !default;
+
+$signin-mobile-header-item: $soapstone !default;
+$signin-mobile-header-item-active: $pencil !default;
+$signin-mobile-header-item-active-border: $space !default;
+
+.getsat-signin {
+  padding: 4.4rem 2.2rem 3.4rem;
+}
+
+.getsat-signin__header {
+  font-size: header-font-size('H2');
+  margin: 0 0 2.8rem;
+}
+
+.getsat-signin__header__item.is-active {
+  color: $signin-header-item-active;
+}
+
+.getsat-signin__header__divider {
+  color: $signin-header-divider;
+  margin: 0 0.6rem;
+}
+
+.getsat-signin__form__input {
+  margin-top: 1rem;
+}
+
+.getsat-signin__form__button {
+  margin-top: 2rem;
+}
+
+@include mediaMobile {
+
+  .getsat-signin {
+    padding: 3rem 1.2rem 2rem;
+  }
+
+  .getsat-signin__header {
+    font-size: header-font-size('H3');
+    margin: 0 0 2.8rem;
+  }
+
+  .getsat-signin__header__item {
+    color: $signin-mobile-header-item;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 1rem;
+    padding: 0.6rem 0.8rem;
+
+    &.is-active {
+      border-bottom: 0.3rem solid $signin-mobile-header-item-active-border;
+      color: $signin-mobile-header-item-active;
+    }
+  }
+
+  .getsat-signin__header__divider {
+    display: none;
+  }
+
+  .getsat-signin__content {
+    padding: 0 0.8rem;
+  }
+}

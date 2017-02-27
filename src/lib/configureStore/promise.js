@@ -16,10 +16,9 @@ module.exports = _ => next => action => {
   return promise
     .then(payload => {
       console.log('success....', payload);
-      next(Object.assign({}, rest, { payload, type: success }))}
-    )
-    .catch(payload =>{
+      next(Object.assign({}, rest, { payload, type: success }))
+    }, payload => {
       console.log('error....');
-      next(Object.assign({}, rest, { payload, type: failure }))}
-    );
+      next(Object.assign({}, rest, { payload, type: failure }))
+    });
 };

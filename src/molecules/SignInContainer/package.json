@@ -1,0 +1,6 @@
+{
+"name": "SignInContainer",
+"private": true,
+"version": "0.0.1",
+"main": "./SignInContainer.js"
+}
