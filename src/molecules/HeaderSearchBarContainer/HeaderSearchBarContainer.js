@@ -5,7 +5,6 @@ const HeaderSearchBar = require('../HeaderSearchBar');
 
 const HeaderSearchBarContainer = (props, { router }) => {
   const onSubmit = (query) => {
-    console.log('transition....');
     router.push(`/search?keyword=${query}`);
   };
 

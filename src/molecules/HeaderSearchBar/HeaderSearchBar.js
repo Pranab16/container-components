@@ -15,6 +15,7 @@ class HeaderSearchBar extends React.Component {
     };
 
     this.saveSearchTerm = this.saveSearchTerm.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -22,6 +23,11 @@ class HeaderSearchBar extends React.Component {
     this.setState({searchInput: value});
   };
 
+  handleKeyPress(event) {
+    if(event.key == 'Enter'){
+      this.onSubmit();
+    }
+  }
   onSubmit() {
     this.props.onSubmit(this.state.searchInput);
   }
@@ -32,6 +38,7 @@ class HeaderSearchBar extends React.Component {
       <div className={classnames("getsat-header-search-bar", props.className)}>
         <TextInput
           onChange={this.saveSearchTerm}
+          onKeyPress={this.handleKeyPress}
           placeholder={props.placeholder}
           value={this.state.searchInput}
           className="getsat-header-search-bar_input"
