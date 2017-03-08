@@ -4,6 +4,7 @@ const PropTypes = require('spr-web-components/src/lib/PropTypes');
 const configureStore = require('../../lib/configureStore');
 const { reducer, searchConversations } = require('./reducer');
 
+const Loader = require('../../atoms/Loader');
 const List = require('spr-web-components/src/molecules/List');
 const ConversationListItem = require('../ConversationListItem');
 
@@ -52,7 +53,11 @@ class SearchResultsList extends React.Component {
   render() {
     const state = Object.assign({}, this.store.getState());
 
-    if (state.loading || state.error) return null;
+    if (state.error) return null;
+
+    if (state.loading) {
+      return <Loader className="getsat-search-results-list__empty-text" />;
+    }
 
     let { conversations, pagination } = state;
     if (this.filters.limit) {
