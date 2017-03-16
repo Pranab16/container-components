@@ -47,7 +47,7 @@ class SearchResultsList extends React.Component {
   }
 
   renderEmptyText(conversations) {
-    if(conversations.length === 0) return <span>{this.props.emptyString}</span>
+    if(conversations.length === 0) return <span className="getsat-search-results-list__empty-text">{this.props.emptyString}</span>
   }
 
   render() {
@@ -56,7 +56,7 @@ class SearchResultsList extends React.Component {
     if (state.error) return null;
 
     if (state.loading) {
-      return <Loader className="getsat-search-results-list__empty-text" />;
+      return <Loader className="getsat-search-results-list__loader" />;
     }
 
     let { conversations, pagination } = state;

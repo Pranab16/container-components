@@ -16,8 +16,6 @@ const Loader = (props) => (
 Loader.propTypes = {
   className: PropTypes.className,
   style: PropTypes.object,
-  text: PropTypes.string,
-  url: PropTypes.string.isRequired
 };
 
 

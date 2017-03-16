@@ -1,9 +1,24 @@
+@import 'src/style/base';
+
 .getsat-ask-question {
+  margin-top: 8rem;
+}
+
+.getsat-ask-question__container {
+  border-top: 0.1rem solid $smoke;
+  padding: 1.5rem 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  background-color: $white;
+  width: 100%;
   text-align: center;
 }
 
 .getsat-ask-question__button {
-  text-transform: uppercase;
-  font-size: 1.2rem;
   display: inline-block;
+  font-size: 1.4rem;
+  border-radius:  0.2rem;
+  background-color: $sky;
 }

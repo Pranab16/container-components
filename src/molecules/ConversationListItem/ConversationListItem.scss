@@ -1,44 +1,73 @@
+@import 'src/style/base';
+
 .getsat-conversation-list-item {
-  border-bottom: 1px solid #ccc;
-  padding-top: 0.5rem;
-  padding-bottom: 1.5rem;
-  display: inline-block;
-  width: 100%;
-}
-.getsat-conversation-list-item:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-
-.getsat-conversation-list-item__icon {
-  float: left;
-  margin: 0 2%;
-  width: 1.5rem;
-  padding-top: 1rem;
-}
-
-.getsat-icon {
-  height: 1.4rem;
-  width: 1.4rem;
+  border-bottom: 0.1rem solid $ivory;
+  padding: 1rem 0;
 }
 
 .getsat-conversation-list-item__title {
-  float: left;
-  width: 75%;
-  padding-top: 1rem;
+  .spx-link {
+    font-size: 1.2rem;
+    color: $nickel;
+    line-height: 2rem;
+    font-weight: 600;
+  }
 }
 
-.getsat-conversation-list-item__title .spx-link {
-  font-size: 1.4rem;
+.getsat-conversation-list-item__description {
+  color: $granite;
+  font-family: $font-family-base;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  max-height: 4rem;
+  text-align: justify;
+  margin-right: -1rem;
+  padding-right: 1rem;
+
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 2rem;
+  }
+
+  &:after {
+    content: '...';
+    position: absolute;
+    right: 0;
+    height: 2rem;
+    color: $white;
+  }
 }
 
-.getsat-conversation-list-item__completed {
-  background: transparent url(../../img/conversation-answered.png) no-repeat right top;
-  float: right;
-  height: 2.7rem;
-  width: 2.7rem;
+.getsat-conversation-list-item__footer {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.getsat-conversation-list-item__footer__author-name {
+  padding-left: 1rem;
+  font-family: $font-family-base;
+  line-height: 1.8rem;
+  font-size: 1.1rem;
+  color: $granite;
+}
+
+.getsat-conversation-list-item__footer__separator {
+  padding: 0 1rem;
+  font-weight: bold;
+  line-height: 1.1rem;
+  font-size: 1.5rem;
+  color: $granite;
+}
+
+.getsat-conversation-list-item__footer__created-at {
+  font-family: $font-family-base;
+  line-height: 1.8rem;
+  font-size: 1.1rem;
+  color: $granite;
 }

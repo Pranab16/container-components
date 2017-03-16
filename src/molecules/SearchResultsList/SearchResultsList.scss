@@ -1,3 +1,24 @@
+@import 'src/style/base';
+
 .getsat-search-results-list {
-  margin: 2rem 0;
+  margin: 2rem 2rem 2rem 1rem;
+
+  .spx-list-component__title {
+    margin: 0;
+
+    .spx-text {
+      color: $granite;
+      font-family: $font-family-bold;
+    }
+  }
+
+  .spx-pagination {
+    font-family: $font-family-base;
+  }
+}
+
+.getsat-search-results-list__empty-text {
+  font-family: $font-family-base;
+  color: $granite;
+  font-size: 1.2rem;
 }

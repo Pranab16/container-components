@@ -11,7 +11,9 @@ const AskQuestion = (props, { location, params }) => {
 
   return (
     <div className={classnames('getsat-ask-question', props.className)} style={props.style}>
-      <Button url={`${props.url}${encodeURIComponent(query)}`} text={props.text} className="getsat-ask-question__button" />
+      <div className="getsat-ask-question__container">
+        <Button url={`${props.url}${encodeURIComponent(query)}`} text={props.text} className="getsat-ask-question__button" />
+      </div>
     </div>
   )
 };

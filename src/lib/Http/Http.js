@@ -11,7 +11,7 @@ const request = (req = axios) => {
   }
 
   return req.create({
-    baseURL: 'http://services.dev.gsfn.us/v1',
+    baseURL: 'https://services.getsatisfaction.com/v1',
     params: {
       client_id: '9f94e4975d33538a4f04a0002adcfbfe0ca119a046b04b342a6874fe3cb242f9'
     },

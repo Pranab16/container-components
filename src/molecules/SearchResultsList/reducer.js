@@ -7,21 +7,24 @@ const LIST_FAILURE = 'conversations/LIST_FAILURE';
 
 const INITIAL_STATE = { conversations: undefined, error: null, loading: true };
 
-const truncateTitle = title => {
-  if (title.length >= 80) {
-    return title.substring(0, 77).concat('...');
-  }
-
-  return title;
+const stripHtmlTags = content => {
+  const tmpElement = document.createElement('DIV');
+  tmpElement.innerHTML = content;
+  return tmpElement.textContent || tmpElement.innerText || '';
 };
 
 const parseConversations = (conversations) => {
   return conversations.map(conversation => {
     return {
-      title: truncateTitle(conversation.subject),
-      topicType: conversation.type,
+      title: conversation.subject,
+      description: stripHtmlTags(conversation.sanitized_content),
+      createdAt: conversation.created_at,
+      lastActivityAt: conversation.last_activity_at,
       topicUrl: conversation.permalink,
-      completed: conversation.status === 'complete'
+      author: {
+        fullName: conversation.author.use_real_name ? conversation.author.real_name : conversation.author.nickname,
+        picture: conversation.author.avatar_uri,
+      },
     }
   })
 };
