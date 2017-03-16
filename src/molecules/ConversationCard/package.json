@@ -1,0 +1,6 @@
+{
+"name": "ConversationCard",
+"private": true,
+"version": "0.0.1",
+"main": "./ConversationCard.js"
+}

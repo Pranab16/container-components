@@ -22,7 +22,7 @@ const ConversationListItem = (props) => (
       <Icon icon={icons[props.topicType]} className="getsat-icon" />
     </div>
     <div className="getsat-conversation-list-item__title">
-      <Link href={props.topicUrl}
+      <Link to={`/topics/${props.topicSlug}`}
         target={props.openInNewWindow ? '_blank' : '_top'}>{props.title}</Link>
     </div>
     {props.completed &&
@@ -39,7 +39,7 @@ ConversationListItem.propTypes = {
   style: PropTypes.object,
   title: PropTypes.string,
   topicType: PropTypes.string,
-  topicUrl: PropTypes.string.isRequired,
+  topicSlug: PropTypes.string.isRequired,
   completed: PropTypes.bool,
   openInNewWindow: PropTypes.bool
 };

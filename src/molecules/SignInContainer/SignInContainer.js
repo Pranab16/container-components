@@ -12,9 +12,7 @@ class SignInContainer extends React.Component {
     super(props);
 
     this.store = configureStore(reducer);
-    if (logged()) {
-      this.redirect(context);
-    }
+    this.redirect(context);
 
     this.onSubmit = this.onSubmit.bind(this);
   }

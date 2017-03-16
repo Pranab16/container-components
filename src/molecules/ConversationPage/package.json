@@ -1,0 +1,6 @@
+{
+"name": "ConversationPage",
+"private": true,
+"version": "0.0.1",
+"main": "./ConversationPage.js"
+}

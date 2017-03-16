@@ -1,0 +1,6 @@
+{
+"name": "ReplyCard",
+"private": true,
+"version": "0.0.1",
+"main": "./ReplyCard.js"
+}

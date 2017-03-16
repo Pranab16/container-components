@@ -21,7 +21,8 @@ const parseConversations = (conversations) => {
       title: truncateTitle(conversation.subject),
       topicType: conversation.type,
       topicUrl: conversation.permalink,
-      completed: conversation.status === 'complete'
+      completed: conversation.status === 'complete',
+      topicSlug: conversation.canonical_name
     }
   })
 };
