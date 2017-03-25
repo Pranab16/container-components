@@ -1,14 +1,15 @@
 @import 'src/style/base';
 
 .getsat-search-results-list {
-  margin: 2rem 2rem 2rem 1rem;
+  margin: 2rem 5rem;
 
   .spx-list-component__title {
     margin: 0;
 
     .spx-text {
-      color: $granite;
+      color: $black;
       font-family: $font-family-bold;
+      font-size: 2rem;
     }
   }
 
@@ -20,5 +21,6 @@
 .getsat-search-results-list__empty-text {
   font-family: $font-family-base;
   color: $granite;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
 }

@@ -10,10 +10,11 @@
   position: fixed;
   bottom: 0;
   right: 0;
+  left: 0;
   z-index: 2;
   background-color: $white;
-  width: 100%;
   text-align: center;
+  margin: 0 2rem;
 }
 
 .getsat-ask-question__button {

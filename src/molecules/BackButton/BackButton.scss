@@ -1,0 +1,12 @@
+@import 'src/style/base';
+
+.getsat-back-button {
+  margin: 2rem 5rem;
+}
+
+.getsat-back-button__button {
+  display: inline-block;
+  font-size: 1.4rem;
+  border-radius:  0.2rem;
+  background-color: $sky;
+}

@@ -7,7 +7,7 @@
 
 .getsat-conversation-list-item__title {
   .spx-link {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: $nickel;
     line-height: 2rem;
     font-weight: 600;
@@ -18,31 +18,42 @@
   color: $granite;
   font-family: $font-family-base;
   font-size: 1.1rem;
-  line-height: 2rem;
   margin: 0;
   overflow: hidden;
-  position: relative;
-  max-height: 4rem;
-  text-align: justify;
-  margin-right: -1rem;
-  padding-right: 1rem;
-
-  &:before {
-    content: '...';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    height: 2rem;
-  }
-
-  &:after {
-    content: '...';
-    position: absolute;
-    right: 0;
-    height: 2rem;
-    color: $white;
-  }
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
+// Show description over two lines
+//.getsat-conversation-list-item__description {
+//  color: $granite;
+//  font-family: $font-family-base;
+//  font-size: 1.1rem;
+//  line-height: 2rem;
+//  margin: 0;
+//  overflow: hidden;
+//  position: relative;
+//  max-height: 4rem;
+//  text-align: justify;
+//  margin-right: -1rem;
+//  padding-right: 1rem;
+//
+//  &:before {
+//    content: '...';
+//    position: absolute;
+//    right: 0;
+//    bottom: 0;
+//    height: 2rem;
+//  }
+//
+//  &:after {
+//    content: '...';
+//    position: absolute;
+//    right: 0;
+//    height: 2rem;
+//    color: $white;
+//  }
+//}
 
 .getsat-conversation-list-item__footer {
   display: flex;

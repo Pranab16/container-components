@@ -2,7 +2,7 @@
 
 .getsat-header-search-bar {
   display: flex;
-  margin: 1rem;
+  margin: 1rem 2rem;
 }
 
 .getsat-header-search-bar__input {
@@ -13,33 +13,38 @@
 }
 
 .getsat-header-search-bar__input__icon {
-  height: 1.4rem;
-  width: 1.6rem;
-  padding: 1.2rem 1.5rem;
+  height: 2rem;
+  width: 2.4rem;
+  padding: 1.4rem 1.6rem;
 
   svg {
     fill: $chrome;
   }
 }
 
-.getsat-header-search-bar__input__form {
-  border: none;
-  border-radius: 0.3rem;
-  color: $soapstone;
-  font-size: 1.2rem;
+.getsat-header-search-bar__input {
+  .getsat-header-search-bar__input__form {
+    border: none;
+    border-radius: 0.3rem;
+    color: $soapstone;
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1.2rem 1rem;
 
-  input[type='text'] {
-    font-family: $font-family-base;
-    color: $granite;
-    background-color: transparent;
+    input[type='text'] {
+      font-family: $font-family-base;
+      color: $granite;
+      background-color: transparent;
+    }
   }
 }
 
 .getsat-header-search-bar__button {
   margin-left: 1rem;
   border-radius: 0.2rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   background-color: $sky;
+  padding: 1rem 2rem;
 }
 
 .spx-button__text {
