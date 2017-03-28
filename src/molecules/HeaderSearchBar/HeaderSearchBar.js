@@ -1,5 +1,6 @@
 const React = require('react');
 const classnames = require('classnames');
+
 const PropTypes = require('spr-web-components/src/lib/PropTypes');
 const TextInput = require('spr-web-components/src/atoms/TextInput');
 const Button = require('spr-web-components/src/atoms/Button');
