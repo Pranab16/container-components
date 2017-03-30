@@ -70,7 +70,7 @@ class SearchResultsList extends React.Component {
         <List
           listItemComponent={ConversationListItem}
           listItems={conversations}
-          pagination={{...pagination, onChange: this.handlePageChange}}
+          pagination={{...pagination, onChange: this.handlePageChange, className: 'getsat-search-results-list__pagination'}}
           title={this.props.title}
         />
         {this.renderEmptyText(conversations)}

@@ -24,3 +24,16 @@
   font-size: 1.6rem;
   font-weight: 600;
 }
+
+@include mediaDesktop {
+  .getsat-search-results-list__pagination {
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    line-height: 4rem;
+    margin: 15px 230px;
+    width: inherit;
+  }
+}

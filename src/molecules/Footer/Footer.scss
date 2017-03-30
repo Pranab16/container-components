@@ -1,0 +1,37 @@
+@import 'src/style/base';
+
+.getsat-footer {
+  margin-top: 8rem;
+}
+
+.getsat-footer__static {
+  box-shadow: 0 -5px 10px 0 $chalk;
+  padding: 1.5rem 0;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  background-color: $white;
+  margin: 0 2rem;
+}
+
+.getsat-footer__back-button {
+  display: inline-block;
+  font-size: 1.4rem;
+  border-radius: 0.2rem;
+  background-color: $white;
+  color: $sky;
+  border: 0.1rem solid $sky;
+  margin-left: 2rem;
+}
+
+.getsat-footer__ask-question-button {
+  display: inline-block;
+  font-size: 1.4rem;
+  border-radius: 0.2rem;
+  background-color: $sky;
+  border: 0.1rem solid $sky;
+  float: right;
+  margin-right: 2rem;
+}
