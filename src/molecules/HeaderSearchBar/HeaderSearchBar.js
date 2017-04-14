@@ -2,10 +2,9 @@ const React = require('react');
 const classnames = require('classnames');
 
 const PropTypes = require('spr-web-components/src/lib/PropTypes');
-const TextInput = require('spr-web-components/src/atoms/TextInput');
-const Button = require('spr-web-components/src/atoms/Button');
 const Icon = require('spr-web-components/src/atoms/Icon');
 
+const TextInput = require('../../atoms/TextInput');
 const searchIcon = require('../../img/search.svg');
 require('./HeaderSearchBar.scss');
 
@@ -43,6 +42,7 @@ class HeaderSearchBar extends React.Component {
         <div className="getsat-header-search-bar__input">
           <Icon icon={searchIcon} className="getsat-header-search-bar__input__icon" />
           <TextInput
+            type="search"
             onChange={this.saveSearchTerm}
             onKeyPress={this.handleKeyPress}
             placeholder={props.placeholder}
@@ -50,11 +50,10 @@ class HeaderSearchBar extends React.Component {
             className="getsat-header-search-bar__input__form"
           />
         </div>
-        <Button
-          text="Search"
-          onClick={this.onSubmit}
-          className="getsat-header-search-bar__button"
-        />
+        <button className="getsat-header-search-bar__button" onClick={this.onSubmit}>
+          <Icon icon={searchIcon} className="getsat-header-search-bar__button__icon" />
+          <span className="getsat-header-search-bar__button__text">{'Search'}</span>
+        </button>
       </div>
     )
   }

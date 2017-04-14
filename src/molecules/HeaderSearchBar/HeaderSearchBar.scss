@@ -52,14 +52,54 @@
 
 .getsat-header-search-bar__button {
   margin-left: 1rem;
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
   font-size: 1.6rem;
   line-height: 1.7rem;
   background-color: $sky;
+  color: $white;
   padding: 1.6rem 2rem;
+  cursor: pointer;
+  border-style: none;
+  outline: none;
 }
 
-.spx-button__text {
+.getsat-header-search-bar__button__text {
   font-family: $font-family-base;
 }
 
+.getsat-header-search-bar__button__icon {
+  display: none;
+}
+
+@include mediaMobile {
+  .getsat-header-search-bar__input {
+    border-radius: 0.3rem 0 0 0.3rem;
+  }
+
+  .getsat-header-search-bar__input__icon {
+    display: none;
+  }
+
+  .getsat-header-search-bar__button {
+    height: 5rem;
+    margin-left: 0;
+    border-radius: 0 0.3rem 0.3rem 0;
+    padding: 0 1rem;
+  }
+
+  .getsat-header-search-bar__button__text {
+    display: none;
+  }
+
+  .getsat-header-search-bar__button__icon {
+    display: block;
+    height: initial;
+    width: initial;
+
+    svg {
+      fill: $white;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}

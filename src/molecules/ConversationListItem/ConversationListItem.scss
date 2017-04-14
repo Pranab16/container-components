@@ -92,3 +92,12 @@
   font-size: 1.1rem;
   color: $granite;
 }
+
+@supports(-webkit-line-clamp: 1) {
+  .getsat-conversation-list-item__description {
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}

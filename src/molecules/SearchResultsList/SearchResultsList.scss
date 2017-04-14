@@ -37,3 +37,9 @@
     width: inherit;
   }
 }
+
+@include mediaMobile {
+  .getsat-search-results-list {
+    margin: 2rem;
+  }
+}
